@@ -1,3 +1,4 @@
+package Assignment_3;
 /*
     MSSV 202418893
     Ho Ten: Tran Quang Hien
@@ -5,13 +6,13 @@
 
 public class Main {
     public static void main(String[] args) {
-        // 1. 2 Employee bang 2 constructor khac nhau
+        // 1. 2 Assignment_3.Employee bang 2 constructor khac nhau
         Employee e1 = new Employee("NV001", "Lam Quy Do");
         Employee e2 = new Employee("NV002", "Tran Thi Huong", 8000000);
         e1.displayInfo();
         e2.displayInfo();
 
-        // 2. 2 SoftwareEngineer bang 2 constructor khac nhau
+        // 2. 2 Assignment_3.SoftwareEngineer bang 2 constructor khac nhau
         SoftwareEngineer se1 = new SoftwareEngineer("NV003", "Tran Quang Hien", "Java");
         SoftwareEngineer se2 = new SoftwareEngineer("NV004", "Bui Ngoc Tuyet", 12000000, "Python", 2000000);
         se1.displayInfo();

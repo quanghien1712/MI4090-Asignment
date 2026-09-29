@@ -1,3 +1,4 @@
+package Assignment_3;
 /*
     MSSV 202418893
     Ho Ten: Tran Quang Hien
@@ -36,12 +37,12 @@ public class SoftwareEngineer extends Employee {
 
     @Override
     public void displayInfo() {
-        System.out.printf("SoftwareEngineer: ID=%s, Ten=%s, NgonNguChinh=%s, Luong=%.1f, PhuCap=%.1f, ChiPhi/Thang=%.1f%n",
+        System.out.printf("Assignment_3.SoftwareEngineer: ID=%s, Ten=%s, NgonNguChinh=%s, Luong=%.1f, PhuCap=%.1f, ChiPhi/Thang=%.1f%n",
               id, fullName, primaryLanguage, baseSalary, technicalAllowance, calculateMonthlyCost());
     }
 
     @Override
     protected void finalize() {
-        System.out.println("[Destructor] SoftwareEngineer " + id + " bi huy");
+        System.out.println("[Destructor] Assignment_3.SoftwareEngineer " + id + " bi huy");
     }
 }

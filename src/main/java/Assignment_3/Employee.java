@@ -1,3 +1,4 @@
+package Assignment_3;
 /*
     MSSV 202418893
     Ho Ten: Tran Quang Hien
@@ -65,12 +66,12 @@ public class Employee {
     }
 
     public void displayInfo() {
-        System.out.printf("Employee: ID=%s, Ten=%s, Luong=%.1f, ChiPhi/Thang=%.1f%n",
+        System.out.printf("Assignment_3.Employee: ID=%s, Ten=%s, Luong=%.1f, ChiPhi/Thang=%.1f%n",
               id, fullName, baseSalary, calculateMonthlyCost());
     }
 
     @Override
     protected void finalize() {
-        System.out.println("[Destructor] Employee " + id + " bi huy");
+        System.out.println("[Destructor] Assignment_3.Employee " + id + " bi huy");
     }
 }

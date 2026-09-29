@@ -1,3 +1,4 @@
+package Assignment_3;
 /*
     MSSV 202418893
     Ho Ten: Tran Quang Hien
@@ -83,7 +84,7 @@ public class ProjectTeam implements AutoCloseable {
 
     @Override
     public void close() {
-        System.out.println("[Destructor] ProjectTeam " + projectCode + " bi huy");
+        System.out.println("[Destructor] Assignment_3.ProjectTeam " + projectCode + " bi huy");
         members.clear();
     }
 }
