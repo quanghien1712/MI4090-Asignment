@@ -42,10 +42,6 @@ public class Computer extends Device implements INetworkable {
         return purchasePrice * rate;
     }
 
-    public int getYearsInUse() {
-        return Year.now().getValue() - yearInService;
-    }
-
     @Override
     public void connect(String ipAddress) {
         if (ipAddress == null || ipAddress.isEmpty()) {

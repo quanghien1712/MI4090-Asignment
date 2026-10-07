@@ -51,6 +51,10 @@ public abstract class  Device {
         this.status = status;
     }
 
+    public int getYearsInUse() {
+        return Year.now().getValue() - yearInService;
+    }
+
     public abstract double calculateMaintenanceCost();
 
     @Override
