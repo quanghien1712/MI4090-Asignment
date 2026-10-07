@@ -51,6 +51,8 @@ public abstract class  Device {
         this.status = status;
     }
 
+    public abstract double calculateMaintenanceCost();
+
     @Override
     public String toString() {
         return String.format("[%s] %s | Nam SD: %d | Gia mua: %,.0f VND | Trang thai: %s",
