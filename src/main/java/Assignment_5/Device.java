@@ -5,6 +5,8 @@
 
 package Assignment_5;
 
+import java.time.Year;
+
 public abstract class  Device {
     protected final String id;
     protected String name;
@@ -13,6 +15,18 @@ public abstract class  Device {
     protected DeviceStatus status;
 
     protected Device(String id, String name, int yearInService, double purchasePrice) {
+        if (id == null || id.isEmpty()) {
+            throw new IllegalArgumentException("Ma thiet bi khong duoc rong");
+        }
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Ten thiet bi khong duoc rong.");
+        }
+        if (purchasePrice <= 0) {
+            throw new IllegalArgumentException("Gia mua phai > 0");
+        }
+        if (yearInService > Year.now().getValue()) {
+            throw new IllegalArgumentException("Nam dua vao su dung khong duoc lon hon nam hien tai");
+        }
         this.id = id;
         this.name = name;
         this.yearInService = yearInService;
