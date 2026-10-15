@@ -42,6 +42,10 @@ public class BorrowItem {
         this.returnedDate = null;
     }
 
+    public boolean isLate() {
+        return isReturned() && returnedDate.isAfter(dueDate);
+    }
+
     public Device getDevice() {
         return device;
     }
