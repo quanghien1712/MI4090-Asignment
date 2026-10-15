@@ -1,8 +1,13 @@
+/*
+    Trần Quang Hiển
+    202418893
+ */
+
 package Assignment_6;
 
 import java.time.Year;
 
-public class Device {
+public abstract class Device {
     protected final String id;
     protected String name;
     protected int yearInService;
@@ -45,6 +50,10 @@ public class Device {
 
     public int getMaxBorrowDays() {
         return maxBorrowDays;
+    }
+
+    public int getYearsInUse() {
+        return Year.now().getValue() - yearInService;
     }
 
     public abstract double calculateAnnualMaintenanceCost();
