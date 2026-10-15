@@ -38,6 +38,10 @@ public class BorrowingSlip {
         this.borrowedDate = borrowedDate;
     }
 
+    public String getSlipId() {
+        return slipId;
+    }
+
     public List<BorrowItem> getItems() {
         return Collections.unmodifiableList(items);
     }
@@ -102,5 +106,30 @@ public class BorrowingSlip {
         if (device.getStatus() != DeviceStatus.AVAILABLE) {
             throw new DeviceUnavailableException(device.getId(), device.getStatus());
         }
+    }
+
+    public boolean hasLateOrUnreturnedItems() {
+        for (BorrowItem item : items) {
+            if (item.isLate() || !item.isReturned()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Phieu %s | %s (%s) | phong %s | ngay muon %s",
+              slipId, borrower.getFullName(), borrower.getBorrowerId(), teachingRoom, borrowedDate));
+        for (BorrowItem item : items) {
+            sb.append("\n    - ").append(item);
+            if (item.isLate()) {
+                sb.append(" [TRA MUON]");
+            } else if (!item.isReturned()) {
+                sb.append(" [CHUA TRA]");
+            }
+        }
+        return sb.toString();
     }
 }
