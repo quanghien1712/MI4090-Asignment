@@ -5,8 +5,10 @@
 
 package Assignment_7;
 
+import Assignment_7.exception.NoSuitableItemException;
+
 import java.util.List;
 
 public interface ISelectionStrategy<T> {
-    T select(List<T> candidates);
+    T select(List<T> candidates) throws NoSuitableItemException;
 }
