@@ -4,11 +4,11 @@
 */
 package Assignment_8;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class EventSource<TEvent> implements Event<TEvent> {
-    private final List<EventHandler<TEvent>> handlers = new ArrayList<>();
+    private final List<EventHandler<TEvent>> handlers = new CopyOnWriteArrayList<>();
 
     @Override
     public void subscribe(EventHandler<TEvent> handler) {
