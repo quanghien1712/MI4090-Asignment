@@ -57,4 +57,18 @@ public abstract class TeachingDevice {
     protected void onAlertRaised(DeviceAlertEvent e) {
         alertRaised.publish(this, e);
     }
+
+    protected void validatePercent(int value, String what) {
+        if (value < 0 || value > 100) {
+            throw new InvalidDeviceReadingException(id, value,
+                  what + " must be between 0 and 100, but was " + value);
+        }
+    }
+
+    // zone: 0-normal, 1-warning, 2-critical
+    protected static int zoneOf(int value, int warningBelow) {
+        if (value == 0) return 2;
+        if (value < warningBelow) return 1;
+        return 0;
+    }
 }
