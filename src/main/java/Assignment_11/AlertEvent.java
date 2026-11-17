@@ -15,9 +15,9 @@ public record AlertEvent(
       LocalDateTime occurredAt
 ) {
     public AlertEvent {
-        Objects.requireNonNull(sensorName, "sensorName");
-        Objects.requireNonNull(unit, "unit");
-        Objects.requireNonNull(severity, "severity");
-        Objects.requireNonNull(occurredAt, "occurredAt");
+        Objects.requireNonNull(sensorName, "sensorName must not be null");
+        Objects.requireNonNull(unit, "unit must not be null");
+        Objects.requireNonNull(severity, "severity must not be null");
+        Objects.requireNonNull(occurredAt, "occurredAt must not be null");
     }
 }
